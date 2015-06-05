@@ -2,7 +2,7 @@ body {
     background: url('../imgs/stars.bmp');
 }
 
-.btn-rainbow {
-    background: #000 url('http://code.divshot.com/geo-bootstrap/img/rainbow.gif') top left;
+#main {
+    padding-top: 100px;
 }
 
