@@ -27,7 +27,7 @@ $(document).ready(function() {
         $('#thankyou').animate({
             right: '2000px'},
             3000, function() {
-            $('#thankyou').css('right', '-1000px');
+            $('#thankyou').css('right', '-1200px');
         });
     })
 
