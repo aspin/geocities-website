@@ -1,68 +1,45 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>Kevin Chen</title>
-      <link rel="stylesheet" type="text/css" href="http://code.divshot.com/geo-bootstrap/swatch/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="css/styles.css">
-      <script type="text/javascript" src="http://code.divshot.com/geo-bootstrap/bootstrap/docs/assets/js/jquery.js"></script>
-      <script type="text/javascript" src="js/index.js"></script>
-    </head>
-    <body>
-      <navbar class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="#">KChen</a>
-            <div class="nav-collapse">
-              <ul class="nav">
-<!--                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </li> -->
-              </ul>
-              <form class="navbar-search pull-left" action="">
-                <input name="query" type="text" class="search-query span2" placeholder="Search Google">
-              </form>
-              <ul class="nav pull-right">
- <!--                <li><a href="#">Link</a></li>
-                <li class="divider-vertical"></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </li> -->
-              </ul>
-            </div>
+<html ng-app="GeocityApp">
+  <head>
+    <title>Kevin Chen</title>
+    <link rel="stylesheet" type="text/css" href="http://code.divshot.com/geo-bootstrap/swatch/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script type="text/javascript" src="http://code.divshot.com/geo-bootstrap/bootstrap/docs/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </head>
+  <body>
+    <navbar class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">KChen</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+            <form id="google" class="navbar-search pull-left" action="">
+              <input name="query" type="text" class="search-query span2" placeholder="Search Google">
+            </form>
           </div>
         </div>
-      </navbar>
-      <section class="container" id="main">
-        <header class="jumbotron subhead" id="overview">
-          <div class="row">
-            <div class="span6">
-              <h1><font color="#FF0000">K</font><font color="#FF5A00">e</font><font color="#FFB400">v</font><font color="#FFff00">i</font><font color="#A5ff00">n</font><font color="#4Bff00">'s</font><font color="#00ff00"> </font><font color="#00ff5A">W</font><font color="#00ffB4">e</font><font color="#00ffff">b</font><font color="#00B4ff">s</font><font color="#005Aff">i</font><font color="#0000ff">t</font><font color="#4B00ff">e</font><blink><font color="#A500ff">!</font><font color="#FF00ff">!</font><font color="#FF00B4">!</font></blink></h1>
-              <p class="lead">"First things first" &mdash; Rapper Iggy Azalea</p>
-              <table cellpadding="2" cellspacing="2">
-                <tbody><tr>
+      </div>
+    </navbar>
+    <main class="container" id="main">
+      <header class="jumbotron subhead" id="overview">
+        <div class="row">
+          <div class="span6">
+            <h1><font color="#FF0000">K</font><font color="#FF5A00">e</font><font color="#FFB400">v</font><font color="#FFff00">i</font><font color="#A5ff00">n</font><font color="#4Bff00">'s</font><font color="#00ff00"> </font><font color="#00ff5A">W</font><font color="#00ffB4">e</font><font color="#00ffff">b</font><font color="#00B4ff">s</font><font color="#005Aff">i</font><font color="#0000ff">t</font><font color="#4B00ff">e</font><blink><font color="#A500ff">!</font><font color="#FF00ff">!</font><font color="#FF00B4">!</font></blink></h1>
+            <p class="lead">"First things first" &mdash; Rapper Iggy Azalea</p>
+            <table cellpadding="2" cellspacing="2">
+              <tbody>
+                <tr>
                   <td>
                     <img src="http://code.divshot.com/geo-bootstrap/img/test/notepad.gif">
                   </td>
@@ -72,28 +49,88 @@
                   <td>
                     <button class="btn btn-primary"> You're the lucky 1000000th visitor!</button>
                 </tr>
-              </tbody></table>
+                <tr>
+                  <td>
+                    <img src="http://media.giphy.com/media/poiOz3yYCThiU/giphy.gif">
+                  </td>
+                  <td>
+                    <img src="http://media.giphy.com/media/poiOz3yYCThiU/giphy.gif">
+                  </td>
+                  <td>
+                    <img src="http://media.giphy.com/media/poiOz3yYCThiU/giphy.gif">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </header>
+
+      <section id="guestbook" ng-controller="GuestbookController as gb">
+        <div class="page-header">
+            <h1>Guestbook <img src="http://code.divshot.com/geo-bootstrap/img/test/hot.gif"></h1>
+        </div>
+
+        <form class="form-horizontal well" id="guestNote">
+          <fieldset>
+            <legend>Leave me a note!</legend>
+            <div class="control-group">
+              <label class="control-label" for="name">Name</label>
+              <div class="controls">
+                <input name="name" type="text" class="input-xlarge" id="name">
+                <p class="help-block">Please leave me your name!</p>
+              </div>
             </div>
-          </div>
-        </header>
-        <section id="friends">
-          <div class="page-header">
-              <h1>Visit my friends! <img src="http://code.divshot.com/geo-bootstrap/img/test/new2.gif"></h1>
-          </div>
+            <div class="control-group">
+              <label class="control-label" for="message">Message</label>
+              <div class="controls">
+                <textarea name="message" class="input-xlarge" id="message" rows="3"></textarea>
+              </div>
+            </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Save!</button>
+              <!-- <button type="reset" class="btn">Cancel</button> -->
+            </div>
+          </fieldset>
+        </form>
+
+        <table class="table table-bordered table-striped table-hover">
+          <tbody>
+            <tr ng-repeat-start="entry in gb.entries">
+              <td colspan="2" style="border-top: 1px dotted #eee; border-bottom: 1px dotted #eee">
+                <b>Posted {{entry.date}}</b>
+              </td>
+            </tr>
+            <tr ng-repeat-end>
+              <td style="width: 150px">
+                <b>{{entry.name}}</b>
+              </td>
+              <td style="">{{entry.message}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="friends">
+        <div class="page-header">
+            <h1>Visit my friends! <img src="http://code.divshot.com/geo-bootstrap/img/test/new2.gif"></h1>
+        </div>
         <a target="_blank" href="http://users.eecs.northwestern.edu/~hcs063"> Visit Henry! </a>
         <br/>
         <a target="_blank" href="http://users.eecs.northwestern.edu/~scl025"> Visit Sarah! </a>
         <br/>
         <a target="_blank" href="http://users.eecs.northwestern.edu/~ckl025/"> Visti Christina! </a>
       </section>
-      <audio autoplay>
-        <source src="music/rick-roll-never-gonna-give-you-up.mp3" type="audio/mp3">
-      </audio>
-      <footer>
-        <center>
-          <img src="http://code.divshot.com/geo-bootstrap/img/test/counter2.gif">
-        </center>
-      </footer>
-    </body>
+    </main>
+    <audio autoplay>
+      <source src="music/rick-roll-never-gonna-give-you-up.mp3" type="audio/mp3">
+    </audio>
+    <footer>
+      <center>
+        <img src="http://code.divshot.com/geo-bootstrap/img/test/counter2.gif">
+      </center>
+    </footer>
+  </body>
 
 </html>
