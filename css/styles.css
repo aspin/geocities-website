@@ -6,3 +6,18 @@ body {
     padding-top: 100px;
 }
 
+#thankyou {
+    width: 1200px;
+    position: fixed;
+    top: 200px;
+    right: -1200px;
+}
+
+#thankyou h1 {
+    display: inline-block;
+}
+
+body, a:hover {
+    cursor: url(http://cur.cursors-4u.net/cursors/cur-8/cur719.cur), progress !important;
+}
+

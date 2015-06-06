@@ -23,6 +23,22 @@ $(document).ready(function() {
 
         GB.push(note);
         event.target.reset();
+
+        $('#thankyou').animate({
+            right: '2000px'},
+            3000, function() {
+            $('#thankyou').css('right', '-1000px');
+        });
+    })
+
+    $('#secretButton').on('click', function(event) {
+        $('#thankyou').animate(
+            { right: '2000px' },
+            3500, 
+            function() {
+                $('#thankyou').css('right', '-1200px');
+            }
+        );
     })
 
 
