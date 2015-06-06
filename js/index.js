@@ -31,7 +31,7 @@ $(document).ready(function() {
         });
     })
 
-    $('#secretButton').on('click', function(event) {
+    $('#secretButton, #winner').on('click', function(event) {
         $('#thankyou').animate(
             { right: '2000px' },
             3500, 

@@ -1,5 +1,5 @@
 // <![CDATA[
-var colour="#FFFFFF";
+var colors=['#EE1F14', '#E2EEDA', '#0858EE'];
 var sparkles=120;
 
 /****************************
@@ -163,6 +163,7 @@ function createDiv(height, width) {
   div.style.height=height+"px";
   div.style.width=width+"px";
   div.style.overflow="hidden";
-  div.style.backgroundColor=colour;
+
+  div.style.backgroundColor=colors[Math.floor(Math.random()*3)];
   return (div);
 }
